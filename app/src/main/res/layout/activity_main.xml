@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white">
+
+            <ImageButton
+                android:id="@+id/ibBackChat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                android:onClick="backChat"
+                android:src="@drawable/mine_edit_back_icon" />
+
+            <TextView
+                android:id="@+id/tv_nikeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="@string/app_name"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_matchMsg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/ll_chatControl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_chatMsg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/chat_input_box_shape"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="9dp"
+                    android:paddingTop="11dp"
+                    android:paddingRight="9dp"
+                    android:paddingBottom="11dp">
+
+                    <com.lin.clay.emojikeyboard.utils.widget.CustomPasteEditText
+                        android:id="@+id/edit_chatMsg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入内容"
+                        android:includeFontPadding="false"
+                        android:maxLines="5"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/chat_input_box_hint"
+                        android:textCursorDrawable="@drawable/cursor_shape"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/img_emoji"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/chat_page_emoji" />
+
+                <RelativeLayout
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom">
+
+                    <TextView
+                        android:id="@+id/tv_send"
+                        android:layout_width="45dp"
+                        android:layout_height="28dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/chat_send_button_bg"
+                        android:gravity="center"
+                        android:text="发送"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_moreOperate"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_oneKeySend"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/img_oneKeySend"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/chat_one_key_send" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@color/app_main_color" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_giftCommon"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/img_giftCommon"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/chat_page_gifts_common" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_emotionGifts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#e5e5e5" />
+
+            <com.lin.clay.emojikeyboard.utils.widget.NoHorizontalScrollerViewPager
+                android:id="@+id/vp_emotionGifts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/svga_gift"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

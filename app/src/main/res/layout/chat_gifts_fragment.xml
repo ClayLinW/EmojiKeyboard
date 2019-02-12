@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_gifts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/emotion_gifts_interval"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_gifts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="73dp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_gradualGifts"
+            android:layout_width="84dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_gifts_gradual_button">
+
+            <RelativeLayout android:layout_width="73dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/white">
+
+                <TextView
+                    android:layout_width="53dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/chat_gradual_gift_shape"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:padding="6dp"
+                    android:text="赠送"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

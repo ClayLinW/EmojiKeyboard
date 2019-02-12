@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp">
+
+    <com.lin.clay.emojikeyboard.utils.widget.CircleImageView
+        android:id="@+id/civ_rightUserIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:src="@drawable/love" />
+
+    <RelativeLayout
+        android:id="@+id/rl_giftContent"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="12dp"
+        android:layout_toLeftOf="@id/civ_rightUserIcon"
+        android:background="@drawable/chat_send_gift_shape">
+
+        <com.lin.clay.emojikeyboard.utils.widget.CircleImageView
+            android:id="@+id/img_giftIcon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tv_giftTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/img_giftIcon"
+            android:text="car_1"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
